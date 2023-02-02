@@ -34,5 +34,4 @@ spec:
       - matomi.sandbox.aws.teamwork.net
       secretName: eml-cert 
 
-
                 
