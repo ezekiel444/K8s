@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: client-app
+  labels:
+    app: client-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: client-app
+  template:
+    metadata:
+      name: app
+      labels:
+        app: client-app
+    spec:
+      containers:
+      - name: web-app
+        image: laithharb/server:v2
+        ports:
+        - containerPort: 3000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata: 
+  name: web-service
+spec:
+  type: NodePort
+  ports:
+   - port: 3000
+     targetPort: 3000
+     nodePort: 30400
+  selector:
+     app: client-app

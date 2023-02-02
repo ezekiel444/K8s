@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: server-app
+  labels:
+    app: server-app
+spec:
+  containers:
+     - name: server-app
+       image: laithharb/server:v2
+       ports:
+        - containerPort: 3000
