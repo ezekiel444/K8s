@@ -7,4 +7,6 @@
 *.tfstate
 *.tfstate.*
 *.tfvars
-/log
+
+*.crt
+*.key
