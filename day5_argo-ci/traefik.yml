@@ -1,0 +1,39 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: argocd-server
+  namespace: argocd
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`argocd-matomi.sandbox.aws.teamwork.net`)
+      priority: 10
+      services:
+        - name: argocd-server
+          port: 80
+    - kind: Rule
+      match: Host(`argocd-matomi.sandbox.aws.teamwork.net`) && Headers(`Content-Type`, `application/grpc`)
+      priority: 11
+      services:
+        - name: argocd-server
+          port: 80
+          scheme: h2c
+  tls:
+    certResolver: default
+
+---
+
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: letsencrypt
+  namespace: default
+spec:
+  secretName: myclustersecret
+  issuerRef:
+    name: letsencrypt
+  commonName: argocd-matomi.sandbox.aws.teamwork.net
+  dnsNames:
+  - argocd-matomi.sandbox.aws.teamwork.net
