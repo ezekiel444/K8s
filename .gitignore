@@ -12,3 +12,5 @@
 *.key
 */.crt
 */.key
+day4_self_sign/ca.crt
+day4_self_sign/ca.key
