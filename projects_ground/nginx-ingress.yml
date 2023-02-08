@@ -18,16 +18,16 @@ metadata:
 spec:
     ingressClassName: ngnix-ingress-controller
     rules: 
-      - host: eml.sandbox.aws.teamwork.net
-        http:
-            paths:
-              - path: /
-                pathType: Prefix
-                backend:
-                    service:
-                        name: ngnix
-                        port:
-                          number: 8082
+    - host: eml.sandbox.aws.teamwork.net
+      http:
+          paths:
+            - path: /
+              pathType: Prefix
+              backend:
+                  service:
+                      name: ngnix
+                      port:
+                        number: 8082
  tls:
   - hosts:
     - lucky.sandbox.aws.teamwork.net
