@@ -16,7 +16,7 @@ metadata:
 spec:
     ingressClassName: ngnix-ingress-spec
     rules: 
-      - host: eml.sandbox.aws.teamwork.net
+      # - host: eml.sandbox.aws.teamwork.net
         http:
             paths:
               - path: /
