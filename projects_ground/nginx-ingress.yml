@@ -27,7 +27,7 @@ spec:
                   service:
                       name: ngnix
                       port:
-                        number: 8082
+                        number: 80
  tls:
   - hosts:
     - lucky.sandbox.aws.teamwork.net
