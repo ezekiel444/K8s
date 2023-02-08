@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: IngressClass
 metadata:
-  name: ngnix-ingress-spec
+  name: ngnix-ingress-controller
   namespace: argocd
 spec:
   controller: k8s.io/ingress-nginx
@@ -14,7 +14,7 @@ metadata:
     annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-    ingressClassName: ngnix-ingress-spec
+    ingressClassName: ngnix-ingress-controller
     rules: 
       # - host: eml.sandbox.aws.teamwork.net
         http:
