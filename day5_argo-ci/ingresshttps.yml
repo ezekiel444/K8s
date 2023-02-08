@@ -23,7 +23,7 @@ metadata:
     #
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
-  # ingressClassName: nginx-matomi
+  ingressClassName: nginx-matomi
   rules:
   - host: eml.sandbox.aws.teamwork.net
     http:
