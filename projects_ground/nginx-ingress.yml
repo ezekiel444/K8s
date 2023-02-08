@@ -25,5 +25,5 @@ spec:
                     service:
                         name: ngnix
                         port:
-                          number: 8082
+                          number: 80
         
