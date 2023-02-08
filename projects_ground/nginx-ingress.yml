@@ -30,5 +30,5 @@ spec:
                       number: 80
   tls:
   - hosts:
-    - lucky.sandbox.aws.teamwork.net
+    -  eml.sandbox.aws.teamwork.net
     secretName: argocd-secret 
