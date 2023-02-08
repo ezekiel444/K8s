@@ -1,4 +1,13 @@
 apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: ngnix-ingress-spec
+  namespace: argocd
+spec:
+  controller: k8s.io/ingress-nginx
+---
+
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
     name: ngnix-ingress
