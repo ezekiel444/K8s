@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: simplon
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ezekiel444/k8s.git
+    targetRevision: HEAD
+    path: simplon
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: simplonargo

@@ -30,7 +30,7 @@ metadata:
 spec:
   selector:
     app: ngnix
-  type: LoadBalancer
+  type: ClusterIP
   ports:
   - name: nginxport
     port: 8082
